@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:small-stone/vur-crontab.git"
+    "url": "git@github.com:small-stone/vue-crontab.git"
   },
   "homepage": "https://1615450788.github.io/vue-cron/dist/index",
   "keywords": [
