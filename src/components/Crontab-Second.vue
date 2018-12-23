@@ -88,7 +88,7 @@ export default {
 		othChange() {
 			//反解析 
 			let ins = this.cron.second
-			console.log('反解析 second', ins);
+			('反解析 second', ins);
 			if (ins === '*') {
 				this.radioValue = 1;
 			} else if (ins.indexOf('-') > -1) {

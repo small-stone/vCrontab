@@ -134,15 +134,15 @@ export default {
             }
         };
     },
-    name: "crontab",
+    name: "vcrontab",
     props: ["expression"],
     methods: {
         resolveExp() {
             //反解析 表达式
-            console.log("准备反解析", this.expression);
+            "准备反解析", this.expression;
             if (this.expression) {
                 let arr = this.expression.split(" ");
-                console.log(arr);
+                arr;
                 if (arr.length >= 6) {
                     //6 位以上是合法表达式
                     let obj = {
@@ -169,10 +169,10 @@ export default {
         },
         // 由子组件触发，更改表达式组成的字段值
         updateContabValue(name, value, from) {
-            console.log("updateContabValue", name, value, from);
+            "updateContabValue", name, value, from;
             this.contabValueObj[name] = value;
             if (from && from !== name) {
-                console.log(`来自组件 ${from} 改变了 ${name} ${value}`);
+                `来自组件 ${from} 改变了 ${name} ${value}`;
                 this.changeRadio(name, value);
             }
         },
@@ -301,7 +301,7 @@ export default {
         },
         clearCron() {
             // 还原选择项
-            console.log("准备还原");
+            ("准备还原");
             this.contabValueObj = {
                 second: "*",
                 min: "*",
@@ -353,7 +353,7 @@ export default {
     }
 };
 </script>
-<style>
+<style scoped>
 .pop_btn {
     text-align: center;
     margin-top: 20px;

@@ -1,7 +1,5 @@
-import crontab from './components/crontab.vue'
+import vCrontab from './components/Crontab.vue'
 
-const install = function (Vue) {
-    Vue.component(crontab.name, crontab)
-}
+vCrontab.install = Vue => Vue.component(vCrontab.name, vCrontab);
 
-export default crontab
+export default vCrontab
