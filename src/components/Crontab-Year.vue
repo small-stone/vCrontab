@@ -60,10 +60,10 @@ export default {
 		// 单选按钮值变化时
 		radioChange() {
 			if (this.cron.mouth === '*') {
-				this.$emit('update', 'mouth', '0', 'year');
+				this.$emit('update', 'mouth', '1', 'year');
 			}
 			if (this.cron.day === '*') {
-				this.$emit('update', 'day', '0', 'year');
+				this.$emit('update', 'day', '1', 'year');
 			}
 			if (this.cron.hour === '*') {
 				this.$emit('update', 'hour', '0', 'year');
