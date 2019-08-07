@@ -56,7 +56,7 @@ export default {
 				this.$emit('update', 'year', '*');
 			} else {
 				if (this.cron.day === '*') {
-					this.$emit('update', 'day', '0', 'mouth');
+					this.$emit('update', 'day', '1', 'mouth');
 				}
 				if (this.cron.hour === '*') {
 					this.$emit('update', 'hour', '0', 'mouth');
