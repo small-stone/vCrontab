@@ -1,5 +1,5 @@
 <template>
-	<el-form size='small'>
+	<el-form size='small' :disabled="readOnly">
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="1">
 				周，允许的通配符[, - * / L #]
@@ -63,7 +63,7 @@ export default {
 		}
 	},
 	name: 'crontab-week',
-	props: ['check', 'cron'],
+	props: ['check', 'cron','readOnly'],
 	methods: {
 		// 单选按钮值变化时
 		radioChange() {

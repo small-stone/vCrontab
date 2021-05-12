@@ -1,5 +1,5 @@
 <template>
-	<el-form size="small">
+	<el-form size="small" :disabled="readOnly">
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="1">
 				分钟，允许的通配符[, - * /]
@@ -48,7 +48,7 @@ export default {
 		}
 	},
 	name: 'crontab-min',
-	props: ['check', 'cron'],
+	props: ['check', 'cron','readOnly'],
 	methods: {
 		// 单选按钮值变化时
 		radioChange() {

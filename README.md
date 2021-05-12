@@ -74,6 +74,10 @@ export default {
 - hideComponent
   需要隐藏的组件数组，依次为`['second','min','hour','day','mouth','week','year']`
 
+- readOnly
+  回显预览模式，无最近五条与底部操作按钮，所有表单禁用（:readOnly="true" 默认为false）
+
+
 ## 方法
 
 - fill

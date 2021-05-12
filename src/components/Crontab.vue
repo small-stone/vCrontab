@@ -2,7 +2,7 @@
   <div>
     <el-tabs type="border-card">
       <el-tab-pane label="秒" v-if="shouldHide('second')">
-        <CrontabSecond @update="updateContabValue" :check="checkNumber" ref="cronsecond" />
+        <CrontabSecond @update="updateContabValue" :check="checkNumber" :readOnly="readOnly" ref="cronsecond" />
       </el-tab-pane>
 
       <el-tab-pane label="分钟" v-if="shouldHide('min')">
@@ -10,6 +10,7 @@
           @update="updateContabValue"
           :check="checkNumber"
           :cron="contabValueObj"
+          :readOnly="readOnly"
           ref="cronmin"
         />
       </el-tab-pane>
@@ -19,6 +20,7 @@
           @update="updateContabValue"
           :check="checkNumber"
           :cron="contabValueObj"
+          :readOnly="readOnly"
           ref="cronhour"
         />
       </el-tab-pane>
@@ -28,6 +30,7 @@
           @update="updateContabValue"
           :check="checkNumber"
           :cron="contabValueObj"
+          :readOnly="readOnly"
           ref="cronday"
         />
       </el-tab-pane>
@@ -37,6 +40,7 @@
           @update="updateContabValue"
           :check="checkNumber"
           :cron="contabValueObj"
+          :readOnly="readOnly"
           ref="cronmouth"
         />
       </el-tab-pane>
@@ -46,6 +50,7 @@
           @update="updateContabValue"
           :check="checkNumber"
           :cron="contabValueObj"
+          :readOnly="readOnly"
           ref="cronweek"
         />
       </el-tab-pane>
@@ -55,6 +60,7 @@
           @update="updateContabValue"
           :check="checkNumber"
           :cron="contabValueObj"
+          :readOnly="readOnly"
           ref="cronyear"
         />
       </el-tab-pane>
@@ -96,9 +102,9 @@
           </tbody>
         </table>
       </div>
-      <CrontabResult :ex="contabValueString"></CrontabResult>
+      <CrontabResult :ex="contabValueString" v-if="!readOnly"></CrontabResult>
 
-      <div class="pop_btn">
+      <div class="pop_btn" v-if="!readOnly">
         <el-button size="small" type="primary" @click="submitFill">确定</el-button>
         <el-button size="small" type="warning" @click="clearCron">重置</el-button>
         <el-button size="small" @click="hidePopup">取消</el-button>
@@ -135,7 +141,7 @@ export default {
     };
   },
   name: "vcrontab",
-  props: ["expression", "hideComponent"],
+  props: ["expression", "hideComponent","readOnly"],
   methods: {
     shouldHide(key) {
       if (this.hideComponent && this.hideComponent.includes(key)) return false;

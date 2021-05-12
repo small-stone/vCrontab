@@ -1,5 +1,5 @@
 <template>
-	<el-form size="small">
+	<el-form size="small" :disabled="readOnly">
 		<el-form-item>
 			<el-radio :label="1" v-model='radioValue'>
 				不填，允许的通配符[, - * /]
@@ -55,7 +55,7 @@ export default {
 		}
 	},
 	name: 'crontab-year',
-	props: ['check', 'mouth', 'cron'],
+	props: ['check', 'mouth', 'cron','readOnly'],
 	methods: {
 		// 单选按钮值变化时
 		radioChange() {
