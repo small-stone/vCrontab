@@ -72,7 +72,7 @@ export default {
   传入的 cron 表达式，可以反解析到 UI 上
 
 - hideComponent
-  需要隐藏的组件数组，依次为`['second','min','hour','day','mouth','week','year']`
+  需要隐藏的组件数组，依次为`['second','min','hour','day','month','week','year']`
 
 ## 方法
 
